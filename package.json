@@ -1,5 +1,5 @@
 {
-  "name": "ktu",
+  "name": "@keslers/ktu",
   "version": "0.0.1",
   "description": "Kesler Technologies Utility dev toolkit (CLI coming soon)",
   "main": "index.js",
