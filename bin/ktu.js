@@ -3,13 +3,14 @@
 
 const { Command } = require("commander");
 const { execSync } = require("child_process");
+const packageJson = require("../package.json");
 
 const program = new Command();
 
 program
   .name("ktu")
   .description("Kesler Technologies (CLI) Utility")
-  .version("0.1.0"); // ← update this as you release
+  .version(packageJson.version);
 
 // ────────────────────────────────────────────────
 // fmt command
