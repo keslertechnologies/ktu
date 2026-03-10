@@ -1,28 +1,48 @@
 #!/usr/bin/env node
+// bin/ktu.js
 
-const { execSync } = require('child_process');
+const { Command } = require("commander");
+const { execSync } = require("child_process");
 
-const command = process.argv[2];
+const program = new Command();
 
-if (command !== 'fmt') {
-  console.log('Usage: ktu fmt');
-  console.log('  Formats all supported files in current directory with Prettier');
-  process.exit(1);
-}
+program
+  .name("ktu")
+  .description("Kesler Technologies (CLI) Utility")
+  .version("0.1.0"); // ← update this as you release
 
-console.log('ktu fmt – formatting current directory...');
+// ────────────────────────────────────────────────
+// fmt command
+// ────────────────────────────────────────────────
 
-try {
-  execSync('npx prettier . --write --ignore-unknown', {
-    stdio: 'inherit',
-    cwd: process.cwd(),
+program
+  .command("fmt")
+  .description(
+    "Format all supported files in the current directory with Prettier",
+  )
+  .action(() => {
+    console.log("ktu fmt - formatting current directory...");
+
+    try {
+      execSync("npx prettier . --write --ignore-unknown", {
+        stdio: "inherit",
+        cwd: process.cwd(),
+      });
+      console.log("\nktu fmt: Done.");
+    } catch (err) {
+      console.error("\nktu fmt failed.");
+      // Let the original exit code bubble up if available
+      process.exit(err.status || 1);
+    }
   });
 
-  console.log('\nktu fmt: Done.');
-  process.exit(0);
-} catch (err) {
-  // Let npx/prettier error messages bubble up naturally
-  // (syntax errors, permission issues, etc.)
-  console.error('\nktu fmt failed.');
-  process.exit(err.status || 1);
+// ────────────────────────────────────────────────
+// Catch-all for unknown commands
+// ────────────────────────────────────────────────
+
+program.parse(process.argv);
+
+if (!process.argv.slice(2).length) {
+  program.outputHelp({ error: true });
+  process.exit(1);
 }
