@@ -28,9 +28,9 @@ program
         stdio: "inherit",
         cwd: process.cwd(),
       });
-      console.log("\nktu fmt: Done.");
+      console.log("\nktu fmt - Completed.");
     } catch (err) {
-      console.error("\nktu fmt failed.");
+      console.error("\nktu fmt - Failed.");
       // Let the original exit code bubble up if available
       process.exit(err.status || 1);
     }
