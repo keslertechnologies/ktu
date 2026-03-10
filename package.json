@@ -1,18 +1,11 @@
 {
   "name": "@keslers/ktu",
-  "version": "0.1.2",
-  "description": "Kesler Technologies Utility dev toolkit",
-  "main": "index.js",
+  "version": "0.1.3",
+  "description": "Kesler Technologies (CLI) Utility",
   "bin": {
     "ktu": "./bin/ktu.js"
   },
-  "keywords": [
-    "cli",
-    "devtools",
-    "kesler",
-    "ubuntu"
-  ],
-  "author": "Christian Kesler christian.kesler@protonmail.com",
+  "author": "Christian Kesler",
   "license": "MIT",
   "private": false,
   "publishConfig": {
