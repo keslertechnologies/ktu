@@ -9,7 +9,7 @@ const program = new Command();
 
 program
   .name("ktu")
-  .description("Kesler Technologies (CLI) Utility")
+  .description(packageJson.description)
   .version(packageJson.version);
 
 // ────────────────────────────────────────────────
