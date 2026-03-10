@@ -25,6 +25,16 @@ ktu --help
 
 Built for speed, consistency, and zero-friction on Ubuntu-based dev machines.
 
+## Versioning
+
+`ktu` uses **Semantic Versioning**:
+
+- **MAJOR** → breaking changes (update scripts/CI if upgrading)
+- **MINOR** → new commands/flags/features (backwards compatible)
+- **PATCH** → bug fixes & small improvements (safe to upgrade)
+
+See [VERSIONING.md](./VERSIONING.md) for details.
+
 ## License
 
 MIT
