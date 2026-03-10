@@ -2,19 +2,20 @@
 
 **Kesler Technologies Utility dev toolkit**
 
-A personal CLI for streamlining website development workflows at Kesler Technologies.
+A CLI tool for streamlining common development workflows.
 
-- Boilerplate scaffolding (React + Tailwind starters)
 - Standardized formatting/linting
-- Editor & tool setup helpers
-- And more coming...
 
 ## Status
 
-Early development — real commands arriving soon.  
-For now, this is a placeholder to secure the name.
+Early development - more commands are being added as needed.
 
-## Installation (once ready)
+Features being considered now:
+
+- Boilerplate scaffolding (React + Tailwind starters)
+- Editor & tool setup helpers
+
+## Installation
 
 ```bash
 npm install -g ktu
@@ -23,7 +24,7 @@ ktu --help
 
 ## Philosophy
 
-Built for speed, consistency, and zero-friction on Ubuntu-based dev machines.
+Simplifying and standardizing repeatable tasks common to projects, teams, and development environments.
 
 ## Versioning
 
@@ -32,8 +33,6 @@ Built for speed, consistency, and zero-friction on Ubuntu-based dev machines.
 - **MAJOR** → breaking changes (update scripts/CI if upgrading)
 - **MINOR** → new commands/flags/features (backwards compatible)
 - **PATCH** → bug fixes & small improvements (safe to upgrade)
-
-See [VERSIONING.md](./VERSIONING.md) for details.
 
 ## License
 

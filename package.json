@@ -1,7 +1,7 @@
 {
   "name": "@keslers/ktu",
-  "version": "0.1.0",
-  "description": "Kesler Technologies Utility dev toolkit (CLI coming soon)",
+  "version": "0.1.1",
+  "description": "Kesler Technologies Utility dev toolkit",
   "main": "index.js",
   "bin": {
     "ktu": "./bin/ktu.js"
