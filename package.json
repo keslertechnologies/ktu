@@ -1,6 +1,6 @@
 {
 	"name": "@keslers/ktu",
-	"version": "0.1.3",
+	"version": "1.0.0",
 	"description": "Kesler Technologies (CLI) Utility",
 	"bin": {
 		"ktu": "./bin/ktu.js"
