@@ -184,6 +184,39 @@ program
 	});
 
 // ────────────────────────────────────────────────
+// gd command (discard ALL uncommitted changes)
+// ────────────────────────────────────────────────
+
+program
+	.command("gd")
+	.description(
+		"⚠️  Discard ALL uncommitted changes (git reset --hard + git clean -fd)",
+	)
+	.action(() => {
+		log.info("⚠️  Discarding ALL uncommitted changes...");
+		log.dim(`  This is destructive and cannot be undone!`);
+		log.dim(`  cwd: ${process.cwd()}`);
+		console.log();
+
+		try {
+			execSync("git reset --hard HEAD", {
+				stdio: "inherit",
+				cwd: process.cwd(),
+			});
+			execSync("git clean -fd", {
+				stdio: "inherit",
+				cwd: process.cwd(),
+			});
+			console.log();
+			log.success("Repository is now completely clean.");
+		} catch (err) {
+			console.log();
+			log.error("gd failed.");
+			process.exit(err.status || 1);
+		}
+	});
+
+// ────────────────────────────────────────────────
 // Catch-all for unknown commands
 // ────────────────────────────────────────────────
 
