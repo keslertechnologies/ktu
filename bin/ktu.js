@@ -92,6 +92,98 @@ program
 	});
 
 // ────────────────────────────────────────────────
+// gco command (smart git checkout + pull)
+// ────────────────────────────────────────────────
+
+program
+	.command("gco <branch>")
+	.description(
+		"Smart checkout: git fetch → checkout branch (creates local tracking if needed) → git pull origin/branch",
+	)
+	.action((branch) => {
+		log.info(`Smart checkout to branch '${branch}'...`);
+		log.dim(`  cwd: ${process.cwd()}`);
+		console.log();
+
+		try {
+			execSync("git fetch origin", {
+				stdio: "inherit",
+				cwd: process.cwd(),
+			});
+			execSync(`git checkout ${branch}`, {
+				stdio: "inherit",
+				cwd: process.cwd(),
+			});
+			execSync(`git pull origin ${branch}`, {
+				stdio: "inherit",
+				cwd: process.cwd(),
+			});
+			console.log();
+			log.success(`Now on '${branch}' and fully up-to-date.`);
+		} catch (err) {
+			console.log();
+			log.error("gco failed.");
+			process.exit(err.status || 1);
+		}
+	});
+
+// ────────────────────────────────────────────────
+// gr command (git restore to branch)
+// ────────────────────────────────────────────────
+
+program
+	.command("gr <branch>")
+	.description(
+		"Reset all files (working tree + index) to match the state of <branch> without changing commits",
+	)
+	.action((branch) => {
+		log.info(`Restoring all files to branch '${branch}'...`);
+		log.dim(`  cwd: ${process.cwd()}`);
+		console.log();
+
+		try {
+			execSync(`git restore --source=${branch} .`, {
+				stdio: "inherit",
+				cwd: process.cwd(),
+			});
+			console.log();
+			log.success(`All files restored to match '${branch}'.`);
+		} catch (err) {
+			console.log();
+			log.error("gr failed.");
+			process.exit(err.status || 1);
+		}
+	});
+
+// ────────────────────────────────────────────────
+// gu command (undo last commit, keep changes)
+// ────────────────────────────────────────────────
+
+program
+	.command("gu")
+	.description(
+		"Undo the last commit but keep all changes staged (git reset --soft HEAD~1)",
+	)
+	.action(() => {
+		log.info("Undoing last commit (keeping changes)...");
+		log.dim(`  cwd: ${process.cwd()}`);
+		console.log();
+
+		try {
+			execSync("git reset --soft HEAD~1", {
+				stdio: "inherit",
+				cwd: process.cwd(),
+			});
+			console.log();
+			log.success("Last commit undone — changes are back in staging.");
+		} catch (err) {
+			console.log();
+			log.error("gu failed.");
+			process.exit(err.status || 1);
+		}
+	});
+
+// ────────────────────────────────────────────────
 // Catch-all for unknown commands
 // ────────────────────────────────────────────────
 
