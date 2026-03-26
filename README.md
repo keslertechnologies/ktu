@@ -5,6 +5,7 @@
 A CLI tool for streamlining common development workflows.
 
 - Standardized formatting/linting
+- Git workflow shortcuts
 
 ## Status
 
@@ -18,9 +19,28 @@ Features being considered now:
 ## Installation
 
 ```bash
-npm install -g ktu
+npm install -g @kesler/ktu
 ktu --help
 ```
+
+## Commands
+
+### Formatting
+
+| Command | Description |
+|---------|-------------|
+| `ktu pf` | Format all supported files with Prettier |
+| `ktu bf` | Format all supported files with Biome |
+
+### Git
+
+| Command | Description |
+|---------|-------------|
+| `ktu gco <branch>` | Smart checkout: fetch → checkout → pull |
+| `ktu gr <branch>` | Restore all files to match a branch (no commit change) |
+| `ktu gu` | Undo last commit, keep changes staged |
+| `ktu gn` | ⚠️ Nuke all uncommitted changes (reset --hard + clean) |
+| `ktu gn <branch>` | ⚠️ Nuke all uncommitted changes, then smart checkout branch |
 
 ## Philosophy
 
