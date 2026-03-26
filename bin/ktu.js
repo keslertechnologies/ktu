@@ -184,16 +184,16 @@ program
 	});
 
 // ────────────────────────────────────────────────
-// gd command (discard ALL uncommitted changes)
+// gn command (nuke all uncommitted changes)
 // ────────────────────────────────────────────────
 
 program
-	.command("gd")
+	.command("gn")
 	.description(
-		"⚠️  Discard ALL uncommitted changes (git reset --hard + git clean -fd)",
+		"⚠️  Nuke ALL uncommitted changes (git reset --hard + git clean -fd)",
 	)
 	.action(() => {
-		log.info("⚠️  Discarding ALL uncommitted changes...");
+		log.info("⚠️  Nuking ALL uncommitted changes...");
 		log.dim(`  This is destructive and cannot be undone!`);
 		log.dim(`  cwd: ${process.cwd()}`);
 		console.log();
@@ -211,7 +211,7 @@ program
 			log.success("Repository is now completely clean.");
 		} catch (err) {
 			console.log();
-			log.error("gd failed.");
+			log.error("gn failed.");
 			process.exit(err.status || 1);
 		}
 	});
