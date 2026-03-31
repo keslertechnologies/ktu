@@ -4,11 +4,13 @@
 const { Command } = require("commander");
 const packageJson = require("../package.json");
 
-const { registerFormat } = require("../commands/format");
+const { registerPrettier } = require("../commands/prettier");
+const { registerBiome } = require("../commands/biome");
 const { registerGitCheckout } = require("../commands/git-checkout");
 const { registerGitRestore } = require("../commands/git-restore");
 const { registerGitUndo } = require("../commands/git-undo");
 const { registerGitNuke } = require("../commands/git-nuke");
+const { registerSortPackageJson } = require("../commands/sort-package-json");
 
 const program = new Command();
 
@@ -17,11 +19,13 @@ program
 	.description(packageJson.description)
 	.version(packageJson.version);
 
-registerFormat(program);
+registerPrettier(program);
+registerBiome(program);
 registerGitCheckout(program);
 registerGitRestore(program);
 registerGitUndo(program);
 registerGitNuke(program);
+registerSortPackageJson(program);
 
 program.parse(process.argv);
 
