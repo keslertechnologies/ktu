@@ -1,6 +1,8 @@
-# ktu
+[![npm version](https://img.shields.io/npm/v/@keslers/ktu.svg)](https://www.npmjs.com/package/@keslers/ktu)
+[![npm downloads](https://img.shields.io/npm/dm/@keslers/ktu.svg)](https://www.npmjs.com/package/@keslers/ktu)
+[![license](https://img.shields.io/npm/l/@keslers/ktu)](https://www.npmjs.com/package/@keslers/ktu)
 
-**Kesler Technologies Utility dev toolkit**
+# @keslers/ktu Terminal Utilitty
 
 A CLI tool for streamlining common development workflows.
 
