@@ -1,3 +1,5 @@
+[![GitLab](https://img.shields.io/badge/GitLab-FC6D26?logo=gitlab&logoColor=white)](https://gitlab.com/keslers/ktu)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/keslertechnologies/ktu)
 [![npm version](https://img.shields.io/npm/v/@keslers/ktu.svg)](https://www.npmjs.com/package/@keslers/ktu)
 [![npm downloads](https://img.shields.io/npm/dm/@keslers/ktu.svg)](https://www.npmjs.com/package/@keslers/ktu)
 [![license](https://img.shields.io/npm/l/@keslers/ktu)](https://www.npmjs.com/package/@keslers/ktu)
