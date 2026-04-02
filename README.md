@@ -35,6 +35,7 @@ ktu --help
 |---------|-------------|
 | `ktu pf` | Format all supported files with Prettier |
 | `ktu bf` | Format all supported files with Biome |
+| `ktu bi` | Initialize Biome |
 
 ### Git
 
