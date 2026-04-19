@@ -11,6 +11,9 @@ const { registerGitRestore } = require("../commands/git-restore");
 const { registerGitUndo } = require("../commands/git-undo");
 const { registerGitNuke } = require("../commands/git-nuke");
 const { registerSortPackageJson } = require("../commands/sort-package-json");
+const {
+	registerFilenamePathComment,
+} = require("../commands/filename-path-comment");
 
 const program = new Command();
 
@@ -26,6 +29,7 @@ registerGitRestore(program);
 registerGitUndo(program);
 registerGitNuke(program);
 registerSortPackageJson(program);
+registerFilenamePathComment(program);
 
 program.parse(process.argv);
 
