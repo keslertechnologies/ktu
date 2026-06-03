@@ -10,6 +10,7 @@ const { registerGitCheckout } = require("../commands/git-checkout");
 const { registerGitRestore } = require("../commands/git-restore");
 const { registerGitUndo } = require("../commands/git-undo");
 const { registerGitNuke } = require("../commands/git-nuke");
+const { registerGitFixup } = require("../commands/git-fixup");
 const { registerSortPackageJson } = require("../commands/sort-package-json");
 const {
 	registerFilenamePathComment,
@@ -28,6 +29,7 @@ registerGitCheckout(program);
 registerGitRestore(program);
 registerGitUndo(program);
 registerGitNuke(program);
+registerGitFixup(program);
 registerSortPackageJson(program);
 registerFilenamePathComment(program);
 

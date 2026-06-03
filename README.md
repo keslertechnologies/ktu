@@ -46,6 +46,7 @@ ktu --help
 | `ktu gu` | Undo last commit, keep changes staged |
 | `ktu gn` | ⚠️ Nuke all uncommitted changes (reset --hard + clean) |
 | `ktu gn <branch>` | ⚠️ Nuke all uncommitted changes, then smart checkout branch |
+| `ktu gf <n>` | Fixup last n commits into the one before them (non-interactive rebase) |
 
 ## Philosophy
 
