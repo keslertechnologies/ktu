@@ -1,3 +1,8 @@
 {
-	"workbench.colorTheme": "Black++ Big Orange"
+	"workbench.colorTheme": "Black++ Big Orange",
+	"workbench.colorCustomizations": {
+		"[Black++ Big Orange]": {
+			"terminal.selectionBackground": "#3a3d4180"
+		}
+	}
 }
