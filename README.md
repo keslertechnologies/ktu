@@ -4,26 +4,22 @@
 [![npm downloads](https://img.shields.io/npm/dm/@keslers/ktu.svg)](https://www.npmjs.com/package/@keslers/ktu)
 [![license](https://img.shields.io/npm/l/@keslers/ktu)](https://www.npmjs.com/package/@keslers/ktu)
 
-# @keslers/ktu Terminal Utilitty
+# @keslers/ktu — Keslers Terminal Utility
 
 A CLI tool for streamlining common development workflows.
 
-- Standardized formatting/linting
+- Standardized formatting and linting
 - Git workflow shortcuts
+- Project file utilities
 
-## Status
+## Requirements
 
-Early development - more commands are being added as needed.
-
-Features being considered now:
-
-- Boilerplate scaffolding (React + Tailwind starters)
-- Editor & tool setup helpers
+- Node.js 18+
 
 ## Installation
 
 ```bash
-npm install -g @kesler/ktu
+npm install -g @keslers/ktu
 ktu --help
 ```
 
@@ -33,24 +29,33 @@ ktu --help
 
 | Command | Description |
 |---------|-------------|
-| `ktu pf` | Format all supported files with Prettier |
-| `ktu bf` | Format all supported files with Biome |
-| `ktu bi` | Initialize Biome |
+| `ktu pf` | Format all supported files with Prettier (`--write --ignore-unknown`) |
+| `ktu bf` | Format all supported files with Biome (VCS-aware, respects `.gitignore`) |
+| `ktu bi` | Write a `biome.json` to the current directory (Tailwind CSS + organizeImports) |
 
 ### Git
 
 | Command | Description |
 |---------|-------------|
 | `ktu gco <branch>` | Smart checkout: fetch → checkout → pull |
-| `ktu gr <branch>` | Restore all files to match a branch (no commit change) |
-| `ktu gu` | Undo last commit, keep changes staged |
-| `ktu gn` | ⚠️ Nuke all uncommitted changes (reset --hard + clean) |
+| `ktu gr <branch>` | Restore all files to match a branch without changing commits |
+| `ktu gu` | Undo last commit, keep changes staged (`reset --soft HEAD~1`) |
+| `ktu gn` | ⚠️ Nuke all uncommitted changes (`reset --hard` + `clean -fd`) |
 | `ktu gn <branch>` | ⚠️ Nuke all uncommitted changes, then smart checkout branch |
-| `ktu gf <n>` | Fixup last n commits into the one before them (non-interactive rebase) |
+| `ktu gf <n>` | Fixup last `n` commits into the one before them (non-interactive rebase) |
+
+### Utilities
+
+| Command | Description |
+|---------|-------------|
+| `ktu spj` | Sort all `package.json` files in the current and child directories |
+| `ktu fpc` | Add a relative file path comment to the top of all JS/TS(X) files |
+| `ktu update` | Update ktu to the latest published version |
+| `ktu version` | Print the current version (`-v` / `-V` flags also work) |
 
 ## Philosophy
 
-Simplifying and standardizing repeatable tasks common to projects, teams, and development environments.
+Simplifying and standardizing repeatable tasks common to projects, teams, and development environments. Commands are intentionally terse — short aliases over long flags.
 
 ## Versioning
 
