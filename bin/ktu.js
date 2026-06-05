@@ -15,6 +15,7 @@ const { registerSortPackageJson } = require("../commands/sort-package-json");
 const {
 	registerFilenamePathComment,
 } = require("../commands/filename-path-comment");
+const { registerUpdate } = require("../commands/update");
 
 const program = new Command();
 
@@ -32,6 +33,7 @@ registerGitNuke(program);
 registerGitFixup(program);
 registerSortPackageJson(program);
 registerFilenamePathComment(program);
+registerUpdate(program);
 
 program.parse(process.argv);
 
