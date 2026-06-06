@@ -78,4 +78,4 @@ Simplifying and standardizing repeatable tasks common to projects, teams, and de
 
 ## License
 
-MIT
+ISC
