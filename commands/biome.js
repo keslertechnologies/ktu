@@ -37,7 +37,7 @@ function registerBiome(program) {
 			console.log();
 
 			const config = {
-				root: false,
+				root: true,
 				css: {
 					parser: {
 						tailwindDirectives: true,
