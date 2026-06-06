@@ -68,14 +68,6 @@ ktu --help
 
 Simplifying and standardizing repeatable tasks common to projects, teams, and development environments. Commands are intentionally terse — short aliases over long flags.
 
-## Versioning
-
-`ktu` uses **Semantic Versioning**:
-
-- **MAJOR** → breaking changes (update scripts/CI if upgrading)
-- **MINOR** → new commands/flags/features (backwards compatible)
-- **PATCH** → bug fixes & small improvements (safe to upgrade)
-
 ## License
 
 ISC
