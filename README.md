@@ -63,7 +63,6 @@ ktu --help
 | `ktu spj` | Sort all `package.json` files in the current and child directories |
 | `ktu fpc` | Add a relative file path comment to the top of all JS/TS(X) files |
 | `ktu update` | Update ktu to the latest published version |
-| `ktu version` | Print the current version (`-v` / `-V` flags also work) |
 
 ## Philosophy
 
