@@ -10,6 +10,7 @@ A CLI tool for streamlining common development workflows.
 
 - Standardized formatting and linting
 - Git workflow shortcuts
+- Wrangler / Cloudflare deployment shortcuts
 - Project file utilities
 
 ## Requirements
@@ -43,6 +44,17 @@ ktu --help
 | `ktu gn` | ⚠️ Nuke all uncommitted changes (`reset --hard` + `clean -fd`) |
 | `ktu gn <branch>` | ⚠️ Nuke all uncommitted changes, then smart checkout branch |
 | `ktu gf <n>` | Fixup last `n` commits into the one before them (non-interactive rebase) |
+
+### Wrangler — Pages (`ktu wp`)
+
+| Command | Description |
+|---------|-------------|
+| `ktu wp` | Build, deploy to Cloudflare Pages, then clean old deployments |
+| `ktu wp build` | Build the project (`tsc -b && vite build`) |
+| `ktu wp deploy` | Deploy `dist/` to Cloudflare Pages |
+| `ktu wp clean` | Delete deployments older than one month |
+
+> `ktu wp clean` requires `jq` to be installed.
 
 ### Utilities
 

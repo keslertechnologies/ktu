@@ -16,6 +16,7 @@ const {
 	registerFilenamePathComment,
 } = require("../commands/filename-path-comment");
 const { registerUpdate } = require("../commands/update");
+const { registerWranglerPages } = require("../commands/wrangler");
 
 const program = new Command();
 
@@ -34,6 +35,7 @@ registerGitFixup(program);
 registerSortPackageJson(program);
 registerFilenamePathComment(program);
 registerUpdate(program);
+registerWranglerPages(program);
 
 program.parse(process.argv);
 
