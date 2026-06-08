@@ -15,6 +15,8 @@ const { registerSortPackageJson } = require("../commands/sort-package-json");
 const {
 	registerFilenamePathComment,
 } = require("../commands/filename-path-comment");
+const { registerNpm } = require("../commands/npm");
+const { registerMake } = require("../commands/make");
 const { registerUpdate } = require("../commands/update");
 const { registerWranglerPages } = require("../commands/wrangler");
 
@@ -34,6 +36,8 @@ registerGitNuke(program);
 registerGitFixup(program);
 registerSortPackageJson(program);
 registerFilenamePathComment(program);
+registerNpm(program);
+registerMake(program);
 registerUpdate(program);
 registerWranglerPages(program);
 

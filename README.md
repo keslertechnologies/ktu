@@ -56,6 +56,15 @@ ktu --help
 
 > `ktu wp clean` requires `jq` to be installed.
 
+### Testing
+
+| Command | Description |
+|---------|-------------|
+| `ktu nrit` | Run `npm run integration-test` |
+| `ktu nrut` | Run `npm run unit-test` |
+| `ktu mit` | Run `make integration-test` |
+| `ktu mut` | Run `make unit-test` |
+
 ### Utilities
 
 | Command | Description |
