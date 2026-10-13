@@ -44,6 +44,7 @@ ktu --help
 | `ktu gn` | ⚠️ Nuke all uncommitted changes (`reset --hard` + `clean -fd`) |
 | `ktu gn <branch>` | ⚠️ Nuke all uncommitted changes, then smart checkout branch |
 | `ktu gf <n>` | Fixup last `n` commits into the one before them (non-interactive rebase) |
+| `ktu ga [branch]` | Analyze authorship on a branch (default `main`): line changes, or commits with `-c` |
 
 ### Wrangler — Pages (`ktu wp`)
 
@@ -53,6 +54,17 @@ ktu --help
 | `ktu wp build` | Build the project (`tsc -b && vite build`) |
 | `ktu wp deploy` | Deploy `dist/` to Cloudflare Pages |
 | `ktu wp clean` | Delete deployments older than one month |
+
+`ktu ga` options:
+
+| Option | Description |
+|--------|-------------|
+| `-l, --lines` | Show lines added, deleted, and changed (default) |
+| `-c, --commits` | Show commit counts instead of lines (combine with `-l` for both) |
+| `-s, --since <date>` | Only count commits after this date (default: `1 year ago`; any git date works, e.g. `3 months ago`) |
+| `-u, --until <date>` | Only count commits before this date |
+
+> Example: `ktu ga -c -s 2026-01-01 -u 2026-09-30`
 
 > `ktu wp clean` requires `jq` to be installed.
 

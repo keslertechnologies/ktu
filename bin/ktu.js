@@ -11,6 +11,7 @@ const { registerGitRestore } = require("../commands/git-restore");
 const { registerGitUndo } = require("../commands/git-undo");
 const { registerGitNuke } = require("../commands/git-nuke");
 const { registerGitFixup } = require("../commands/git-fixup");
+const { registerGitAnalysis } = require("../commands/git-analysis");
 const { registerSortPackageJson } = require("../commands/sort-package-json");
 const {
 	registerFilenamePathComment,
@@ -34,6 +35,7 @@ registerGitRestore(program);
 registerGitUndo(program);
 registerGitNuke(program);
 registerGitFixup(program);
+registerGitAnalysis(program);
 registerSortPackageJson(program);
 registerFilenamePathComment(program);
 registerNpm(program);
