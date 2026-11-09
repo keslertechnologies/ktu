@@ -39,7 +39,8 @@ ktu --help
 | Command | Description |
 |---------|-------------|
 | `ktu gco <branch>` | Smart checkout: fetch → checkout → pull |
-| `ktu gr <branch>` | Restore all files to match a branch without changing commits |
+| `ktu gr <branch> <onto>` | Smart rebase: fetch → pull both branches → rebase `<branch>` onto `<onto>` |
+| `ktu go <branch>` | Git overlay: restore all files to match a branch without changing commits |
 | `ktu gu` | Undo last commit, keep changes staged (`reset --soft HEAD~1`) |
 | `ktu gn` | ⚠️ Nuke all uncommitted changes (`reset --hard` + `clean -fd`) |
 | `ktu gn <branch>` | ⚠️ Nuke all uncommitted changes, then smart checkout branch |
